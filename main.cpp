@@ -38,7 +38,7 @@ int main()
     char mazeCopy[ROW][COLUMN];   // Used to calculate the path
     char mazeDisplay[ROW][COLUMN];   // Used to display the path
 
-    for (int i = 0; i < ROW; i++)
+    for (int i = 0; i < ROW; i++) //copy maze to to mazeCopy
     {
         for (int j = 0; j < COLUMN; j++)
         {
@@ -55,7 +55,7 @@ int main()
 
     while (true)
     {
-        if (mazeCopy[currentPosition.x][currentPosition.y] == EXIT) break;
+        if (mazeCopy[currentPosition.x][currentPosition.y] == EXIT) break; //if current position is goal state then break out of the loop
 
         // Get the maze element at each direction of the current position
         char positionUp = mazeCopy[currentPosition.x - 1][currentPosition.y];
@@ -101,7 +101,7 @@ int main()
             mazeCopy[currentPosition.x][currentPosition.y] = WALL;
             currentPosition = path.Pop();
         }
-    }
+    }//edit 56-104 using A* algorithm 
 
     int finalSize = path.GetLength();
 
